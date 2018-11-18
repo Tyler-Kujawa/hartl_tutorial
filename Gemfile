@@ -60,6 +60,8 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'pry', require: 'pry'
+  gem 'pry-nav'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
