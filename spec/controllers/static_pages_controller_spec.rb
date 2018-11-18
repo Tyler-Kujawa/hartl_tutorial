@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe StaticPagesController, type: :controller do
+  let(:base_title) { "Ruby on Rails Tutorial Sample App" }
 
   describe "GET #home" do
     before { get :home }
@@ -10,7 +11,7 @@ RSpec.describe StaticPagesController, type: :controller do
     end
 
     it "has the right title" do
-      expect(response.body).to have_selector("title", text: "Home | Ruby on Rails Tutorial Sample App", visible: false)
+      expect(response.body).to have_selector("title", text: "Home | #{base_title}", visible: false)
     end
   end
 
@@ -22,7 +23,7 @@ RSpec.describe StaticPagesController, type: :controller do
     end
 
     it "has the right title" do
-      expect(response.body).to have_selector("title", text: "Help | Ruby on Rails Tutorial Sample App", visible: false)
+      expect(response.body).to have_selector("title", text: "Help | #{base_title}", visible: false)
     end
   end
 
@@ -35,7 +36,7 @@ RSpec.describe StaticPagesController, type: :controller do
     end
 
     it "has the right title" do
-      expect(response.body).to have_selector("title", text: "About | Ruby on Rails Tutorial Sample App", visible: false)
+      expect(response.body).to have_selector("title", text: "About | #{base_title}", visible: false)
     end
   end
 end
