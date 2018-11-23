@@ -11,7 +11,7 @@ RSpec.describe StaticPagesController, type: :controller do
     end
 
     it "has the right title" do
-      expect(response.body).to have_selector("title", text: "Home | #{base_title}", visible: false)
+      expect(response.body).to have_css("title", text: base_title, visible: false)
     end
   end
 
