@@ -60,14 +60,14 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #333;
+  color: white; 
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
 
   &:hover {
-    color: #fff;
+    color: white; 
     text-decoration: none;
   }
 }
@@ -81,10 +81,10 @@ footer {
   color: $gray-light;
 
   a {
-    color: #555;
+    color: $gray 
 
     &:hover {
-      color: #222;
+      color: $gray-darker; 
     }
   }
 
@@ -102,5 +102,3 @@ footer {
     }
   }
 }
-
-
