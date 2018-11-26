@@ -27,16 +27,27 @@ RSpec.describe StaticPagesController, type: :controller do
     end
   end
 
-  describe "GET #about" do
+  describe "get #about" do
     before { get :about }
 
     it "returns http success" do
-      get :about
       expect(response).to have_http_status(:success)
     end
 
     it "has the right title" do
       expect(response.body).to have_selector("title", text: "About | #{base_title}", visible: false)
+    end
+  end
+
+  describe "get #contact" do
+    before { get :contact }
+
+    it "returns http success" do
+      expect(response).to have_http_status(:success)
+    end
+
+    it "has the right title" do
+      expect(response.body).to have_selector("title", text: "Contact | #{base_title}", visible: false)
     end
   end
 end
