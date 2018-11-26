@@ -62,6 +62,7 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
   gem 'guard-rspec', require: false
   gem 'pry', require: 'pry'
   gem 'pry-nav'
