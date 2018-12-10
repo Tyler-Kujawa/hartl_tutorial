@@ -25,7 +25,7 @@ describe 'the header' do
 
     xit 'goes to Log in' do
       click_link 'Log in'
-      expect(page).to have_current_path login_path
+      expect(page).to have_current_path root_path 
     end
   end
 end
