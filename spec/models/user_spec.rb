@@ -20,14 +20,16 @@ RSpec.describe User, type: :model do
       end
     end
 
-    it 'email is not present' do
-      user.email = nil
-      expect(user.valid?).to be(false)
-    end
+    describe 'email' do
+      it 'is not present' do
+        user.email = nil
+        expect(user.valid?).to be(false)
+      end
 
-    xit 'email is not formatted correctly' do
-      user.email = 'this is an email'
-      expect(user.valid?).to be(false)
+      it 'it is too long' do
+        user.email = "#{'a' * 260}@gmail.com"
+        expect(user.valid?).to be(false)
+      end
     end
   end
 end
