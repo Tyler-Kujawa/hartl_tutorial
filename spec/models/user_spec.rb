@@ -48,6 +48,7 @@ RSpec.describe User, type: :model do
 
       it 'ensures email is unique' do
         clone = user.dup
+        clone.email.upcase!
         user.save
         expect(clone.valid?).to be(false)
       end
