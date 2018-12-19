@@ -45,6 +45,13 @@ RSpec.describe User, type: :model do
           is_expected.to be(false)
         end
       end
+
+      it 'ensures email is unique' do
+        clone = user.dup
+        user.save
+        expect(clone.valid?).to be(false)
+      end
+
     end
   end
 end
