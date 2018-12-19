@@ -53,6 +53,12 @@ RSpec.describe User, type: :model do
         expect(clone.valid?).to be(false)
       end
 
+      it 'downcases email before saving' do
+        user.email = 'TEST@gmail.com'
+        user.save
+        expect(user.email).to eq('test@gmail.com')
+      end
+
     end
   end
 end
