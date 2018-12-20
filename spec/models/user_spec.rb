@@ -59,7 +59,13 @@ RSpec.describe User, type: :model do
         user.save
         expect(user.email).to eq('test@gmail.com')
       end
+    end
 
+    describe 'password' do
+      it 'must have a password' do
+        noPassUser = User.create(name: 'coolUser', email: 'coolUser@cool.com')
+        expect(noPassUser.valid?).to be(false)
+      end
     end
   end
 end
