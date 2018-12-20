@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   let(:user) { User.new name: 'coolUser', email: 'coolUser@cool.com',
-               password: 'pwd', password_confirmation: 'pwd' }
+               password: 'password', password_confirmation: 'password' }
   subject { user.valid? }
 
   describe 'validations' do
@@ -73,6 +73,13 @@ RSpec.describe User, type: :model do
         bad_pass_user.password_confirmation = " " * 6
         expect(bad_pass_user.valid?).to be(false)
       end
+
+      it 'min length of 6' do
+        bad_pass_user.password = "short"
+        bad_pass_user.password_confirmation = "short"
+        expect(bad_pass_user.valid?).to be(false)
+      end
+
     end
   end
 end
