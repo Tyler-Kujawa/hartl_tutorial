@@ -62,9 +62,16 @@ RSpec.describe User, type: :model do
     end
 
     describe 'password' do
-      it 'must have a password' do
-        noPassUser = User.create(name: 'coolUser', email: 'coolUser@cool.com')
-        expect(noPassUser.valid?).to be(false)
+      let(:bad_pass_user) {User.create(name: 'coolUser', email: 'coolUser@cool.com')}
+
+      it 'must be present' do
+        expect(bad_pass_user.valid?).to be(false)
+      end
+
+      it 'must be not be blank' do
+        bad_pass_user.password = " " * 6
+        bad_pass_user.password_confirmation = " " * 6
+        expect(bad_pass_user.valid?).to be(false)
       end
     end
   end
