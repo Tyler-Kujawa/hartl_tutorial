@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { User.new name: 'coolUser', email: 'coolUser@cool.com' }
+  let(:user) { User.new name: 'coolUser', email: 'coolUser@cool.com',
+               password: 'pwd', password_confirmation: 'pwd' }
   subject { user.valid? }
 
   describe 'validations' do
