@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   # Users
   get '/signup', to: 'users#new'
+  resources :users
 
   # Static Pages
   get '/help', to: 'static_pages#help'
