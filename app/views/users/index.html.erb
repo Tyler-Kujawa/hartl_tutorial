@@ -1,0 +1,12 @@
+<h1>Users</h1>
+<hr>
+<% @users.each do |user| %>
+	<div>
+		<%= user.name %> | <%= user.email %> |
+		<span class="edit-stuff">
+			<%= link_to "show", "" %>
+			<%= link_to "edit", "" %>
+			<%= link_to "delete", "" %>
+		</span>
+	</div>
+<% end %>
