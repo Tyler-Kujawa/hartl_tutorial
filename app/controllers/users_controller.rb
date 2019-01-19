@@ -9,13 +9,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
-end
-=======
-  	@user = User.where(id: params[:id]).first
-  end
 
   def index
   	@users = User.all
   end
 end
->>>>>>> master
