@@ -1,5 +1,10 @@
-<div class="info">
-	<h1 class="text-left"><%= @user.name %></h1>
+<div class="user-info">
+	<div class="header">
+		<p><%= gravatar_for @user %></p>
+		<h1><%= @user.name %></h1>
+	</div>
 	<hr>
-	<h4><b>email:</b> <%= @user.email %></h4>
+	<p><b>email:</b> <%= @user.email %></p>
+	<p><b>created at:</b> <%= @user.created_at %></p>
+	<p><b>updated at:</b> <%= @user.updated_at %></p>
 </div>
