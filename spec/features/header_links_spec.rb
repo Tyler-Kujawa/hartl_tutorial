@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'the header' do
@@ -25,7 +27,7 @@ describe 'the header' do
 
     xit 'goes to Log in' do
       click_link 'Log in'
-      expect(page).to have_current_path root_path 
+      expect(page).to have_current_path root_path
     end
   end
 end

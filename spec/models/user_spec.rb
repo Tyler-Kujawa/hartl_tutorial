@@ -1,8 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { User.new name: 'coolUser', email: 'coolUser@cool.com',
-               password: 'password', password_confirmation: 'password' }
+  let(:user) do
+    User.new name: 'coolUser', email: 'coolUser@cool.com',
+             password: 'password', password_confirmation: 'password'
+  end
   subject { user.valid? }
 
   describe 'validations' do
@@ -15,7 +19,7 @@ RSpec.describe User, type: :model do
       end
 
       it 'is too long' do
-        user.name = "#{'a' * 52}"
+        user.name = ('a' * 52).to_s
         is_expected.to be(false)
       end
     end
@@ -62,24 +66,23 @@ RSpec.describe User, type: :model do
     end
 
     describe 'password' do
-      let(:bad_pass_user) {User.create(name: 'coolUser', email: 'coolUser@cool.com')}
+      let(:bad_pass_user) { User.create(name: 'coolUser', email: 'coolUser@cool.com') }
 
       it 'must be present' do
         expect(bad_pass_user.valid?).to be(false)
       end
 
       it 'must be not be blank' do
-        bad_pass_user.password = " " * 6
-        bad_pass_user.password_confirmation = " " * 6
+        bad_pass_user.password = ' ' * 6
+        bad_pass_user.password_confirmation = ' ' * 6
         expect(bad_pass_user.valid?).to be(false)
       end
 
       it 'min length of 6' do
-        bad_pass_user.password = "short"
-        bad_pass_user.password_confirmation = "short"
+        bad_pass_user.password = 'short'
+        bad_pass_user.password_confirmation = 'short'
         expect(bad_pass_user.valid?).to be(false)
       end
-
     end
   end
 end

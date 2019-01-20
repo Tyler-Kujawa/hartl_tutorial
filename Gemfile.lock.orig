@@ -47,7 +47,6 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
-    ast (2.4.0)
     autoprefixer-rails (9.4.5)
       execjs
     bcrypt (3.1.12)
@@ -108,7 +107,6 @@ GEM
     i18n (1.5.2)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
-    jaro_winkler (1.5.2)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -141,10 +139,6 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    parallel (1.13.0)
-    parser (2.6.0.0)
-      ast (~> 2.4.0)
-    powerpack (0.1.2)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -184,7 +178,6 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
-    rainbow (3.0.0)
     rake (12.3.2)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
@@ -211,15 +204,6 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
-    rubocop (0.63.0)
-      jaro_winkler (~> 1.5.1)
-      parallel (~> 1.10)
-      parser (>= 2.5, != 2.5.1.1)
-      powerpack (~> 0.1)
-      rainbow (>= 2.2.2, < 4.0)
-      ruby-progressbar (~> 1.7)
-      unicode-display_width (~> 1.4.0)
-    ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.2)
     sass (3.7.3)
@@ -267,7 +251,6 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
-    unicode-display_width (1.4.1)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -289,9 +272,9 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capybara (>= 2.15)
-  chromedriver-helper
+  chromedriver-helper (= 1.2.0)
   coffee-rails (~> 4.2)
-  coffee-script-source (~> 1.8)
+  coffee-script-source (= 1.8.0)
   guard-rspec
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
@@ -301,7 +284,6 @@ DEPENDENCIES
   rails (~> 5.2.1)
   rails-controller-testing
   rspec-rails
-  rubocop
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
@@ -313,7 +295,11 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
+<<<<<<< HEAD
+   ruby 2.5.3p105
+=======
    ruby 2.3.3p222
+>>>>>>> master
 
 BUNDLED WITH
    2.0.1
